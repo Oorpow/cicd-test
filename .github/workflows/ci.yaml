@@ -6,9 +6,11 @@ jobs:
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v3
+      - name: Install Package manager
+        run: npm install pnpm
       - name: Install Packages
-        run: npm install
+        run: pnpm install
       - name: Check Lint
         run: npx eslint
       - name: Check Simple Build
-        run: npm run build
+        run: pnpm build
