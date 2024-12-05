@@ -7,8 +7,8 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v3
       - name: Install Packages
-        run: pnpm install
+        run: npm install
       - name: Check Lint
         run: npx eslint
       - name: Check Simple Build
-        run: pnpm build
+        run: npm run build
