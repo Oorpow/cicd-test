@@ -1,0 +1,6 @@
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - run: eslint
+      - run: prettier --check ./
