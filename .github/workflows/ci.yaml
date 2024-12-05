@@ -1,6 +1,14 @@
+name: CI
+on: [push]
 jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      - run: eslint
-      - run: prettier --check ./
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+      - name: Install Packages
+        run: pnpm install
+      - name: Check Lint
+        run: npx eslint
+      - name: Check Simple Build
+        run: pnpm build
